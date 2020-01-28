@@ -7,11 +7,17 @@ class User
   end
 
   def introduce
-    if @age > 20
+    if adult?
       "はじめまして、私の名前は#{@name}です。"
     else
       "ぼくは#{@name}だよ！！！"
     end
+  end
+
+  private
+
+  def adult?
+    @age >= 20
   end
 end
 
