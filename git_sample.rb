@@ -23,9 +23,7 @@ end
 
 def build_users(params)
   users = []
-  params.each do |params|
-    users << User.new(params)
- end
+  params.each {|params| users << User.new(params)}
 
  users
 end
@@ -34,6 +32,4 @@ params = [{name: "satou",age: 22}, {name: "taira", age: 12} , {name: "yamada", a
 
 users = build_users(params)
 
-users.each do |user|
-    puts user.introduce
-end
+users.each {|user| puts user.introduce}
